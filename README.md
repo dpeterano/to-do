@@ -20,9 +20,13 @@ With Containers
 
 ![Task Container Example](<assets/design/final_result/Empty Containers Example.png>)
 
-With one task in the first taskbox of the first row
+Task Box Design
 
 ![alt text](assets/design/final_result/TaskBox.png)
+
+Task Creation Window
+
+![alt text](assets/design/final_result/TaskName.png)
 
 ### Additional Features to add afterward
 
@@ -59,3 +63,7 @@ But as of now this is what I came up with.
 
         </div>
 ```
+
+## How Much Time Spent So Far
+
++10hrs
