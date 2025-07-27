@@ -1,0 +1,164 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+button {
+    cursor: pointer;
+}
+
+.pop-up-task-name,
+.pop-up-name {
+    display: none;
+}
+
+.pop-up-task-name.shown {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    padding-top:28px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #EFEFEF;
+    width: 384px;
+    height: 172px;
+    border-radius: 15px;
+    gap: 28px;
+    top: 30%;
+    left: 40%;
+
+    input {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: medium;
+        font-size: 15px;
+        text-align: center;
+        border-radius: 10px;
+        width: 100%;
+        height: 47px;
+        border: solid 1px #D2D2D2;
+    }
+
+    button {
+        font-family: 'Montserrat', sans-serif;
+        font-weight:500;
+        font-size: 15px;
+        background-color: #98C8FF;
+        border: none;
+        border-radius: 10px;
+        width: 142px;
+        height: 49px;
+    }
+}
+.pop-up-name.shown {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    padding-top:28px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #EFEFEF;
+    width: 384px;
+    height: 172px;
+    border-radius: 15px;
+    gap: 28px;
+    top: 30%;
+    left: 40%;
+
+    input {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: medium;
+        font-size: 15px;
+        text-align: center;
+        border-radius: 10px;
+        width: 100%;
+        height: 47px;
+        border: solid 1px #D2D2D2;
+    }
+
+    button {
+        font-family: 'Montserrat', sans-serif;
+        font-weight:500;
+        font-size: 15px;
+        background-color: #98C8FF;
+        border: none;
+        border-radius: 10px;
+        width: 142px;
+        height: 49px;
+    }
+}
+
+/* Landing Page */
+
+.landing-page {
+    padding-left: 168px;
+    padding-right: 168px;
+    padding-top: 45px;
+    min-height: 100vh;
+
+    h1 {
+        font-weight: bold;
+        font-size: 38px;
+    }
+}
+
+.add-list {
+    position: fixed;
+    top: 63px;
+    right: 168px;
+    background-color: #98C8FF;
+    color: rgba(0, 0, 0, 0.527);
+    box-shadow: 0px 0px 20px rgb(185, 185, 185);
+    border-radius: 15px;
+    width: 198px;
+    height: 57px;
+    border: none;
+    font-size: 25px;
+    font-weight: medium;
+    transition: 0.2s all ease-out;
+}
+
+.add-list:hover {
+    box-shadow: 0px 0px 20px rgb(153, 153, 153);
+    transform: scale(1.04);
+    color: black;
+}
+
+/* Task List Styling  */
+
+.ref_row {
+    display: flex;
+    margin-top: 70px;
+    gap: 108px;
+}
+.ref_taskbox {
+    min-width: 296px;
+    min-height: 110px;
+    display: flex;
+    padding: 0 15px;
+    padding-bottom: 15px;
+    flex-direction: column;
+    background-color: #f2f4f8;
+    border: solid 1px #E6E6E6;
+    border-radius: 10px;
+
+    p {
+        top: 0;
+        left: 0;
+    }
+
+    button {
+        bottom: 10px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: #f2f4f8;
+        transition: all 0.2S;
+    }
+    button:hover {
+        background-color: #eeeeee;
+    }
+}

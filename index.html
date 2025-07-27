@@ -5,30 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My To Do List</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <!-- Pop up asking for Task Box name -->
 
     <div class="pop-up-name" id="pop-up-name">
-        <input type="text" id="pop-input">
-        <button type="submit" id="pop-button">Enter</button>
+        <input type="text" id="pop-input" placeholder="Enter Task List Name">
+        <button type="submit" id="pop-button">Add</button>
+    </div>
+    <div class="pop-up-task-name" id="pop-up-task-name">
+        <input type="text" id="pop-task-input" placeholder="Enter Task Name Here">
+        <button type="submit" id="pop-task-button">Add</button>
     </div>
     
     <section class="landing-page">
         
         <h1 class="main-title">
-            My To Do List
+            MY TO DO LIST
         </h1>
 
         <!-- Add List Button -->
 
-        <button onclick="addList()">Add List</button>
+        <button class="add-list" onclick="addList()">Add List</button>
 
         <!-- section containing the task lists -->
 
         <div class="t_refer" id="t_refer">
-
+            
         </div>
 
     </section>
