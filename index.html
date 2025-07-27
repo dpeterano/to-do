@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Pop up asking for Task Box name -->
+
+    <div class="pop-up-name" id="pop-up-name">
+        <input type="text" id="pop-input">
+        <button type="submit" id="pop-button">Enter</button>
+    </div>
     
     <section class="landing-page">
         
@@ -16,31 +23,11 @@
 
         <!-- Add List Button -->
 
-        <button type="submit">Add List</button>
+        <button onclick="addList()">Add List</button>
 
         <!-- section containing the task lists -->
 
-        <div class="row-container">
-
-            <div class="row-1">
-                <div class="task-box-1">
-                    <p class="task-box-name">taskname</p>
-
-                    <div class="task">
-                        <p class="task-name"></p>
-                    </div>
-
-                    <button class="AddCard"></button>
-                </div>
-                <div class="task-box-2">
-                    <p class="taskname">taskname</p>
-
-                </div>
-                <div class="task-box-3">
-                    <p class="taskname">taskname</p>
-
-                </div>
-            </div>
+        <div class="t_refer" id="t_refer">
 
         </div>
 
