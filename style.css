@@ -16,17 +16,16 @@ button {
     position: fixed;
     flex-direction: column;
     align-items: center;
-    padding-top:28px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 28px 20px;
     background-color: #a7a7a759;
     backdrop-filter: blur(5px);
-    width: 384px;
+    width: min(384px, 80vw);
     height: 172px;
     border-radius: 15px;
     gap: 28px;
-    top: 30%;
-    left: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     input {
         font-family: 'Montserrat', sans-serif;
@@ -55,17 +54,16 @@ button {
     position: fixed;
     flex-direction: column;
     align-items: center;
-    padding-top:28px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 28px 20px;
     background-color: #a7a7a759;
     backdrop-filter: blur(5px);
-    width: 384px;
+    width: min(384px, 80vw);
     height: 172px;
     border-radius: 15px;
     gap: 28px;
-    top: 30%;
-    left: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     input {
         font-family: 'Montserrat', sans-serif;
@@ -93,31 +91,34 @@ button {
 /* Landing Page */
 
 .landing-page {
-    padding-left: 168px;
-    padding-right: 168px;
-    padding-top: 45px;
+    padding: 45px 20px 20px;
     min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
 
     h1 {
         font-weight: bold;
-        font-size: 38px;
+        font-size: clamp(28px, 5vw, 38px);
+        text-align: center;
+        margin-bottom: 20px;
     }
 }
 
 .add-list {
     position: fixed;
-    top: 63px;
-    right: 168px;
+    top: 20px;
+    right: 20px;
     background-color: #98C8FF;
     color: rgba(0, 0, 0, 0.527);
     box-shadow: 0px 0px 20px rgb(185, 185, 185);
     border-radius: 15px;
-    width: 198px;
+    width: min(198px, calc(100vw - 40px));
     height: 57px;
     border: none;
-    font-size: 25px;
+    font-size: clamp(18px, 4vw, 25px);
     font-weight: medium;
     transition: 0.2s all ease-out;
+    z-index: 100;
 }
 
 .add-list:hover {
@@ -129,22 +130,25 @@ button {
 /* Task List Styling  */
 
 .ref_row {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     margin-top: 70px;
-    gap: 108px;
-    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
 }
 .ref_taskbox {
-    min-width: 296px;
+    min-width: 280px;
     min-height: 110px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 0 15px;
+    padding: 15px;
     padding-bottom: 15px;
     flex-direction: column;
     background-color: #f2f4f8;
     border: solid 1px #E6E6E6;
     border-radius: 10px;
+    box-sizing: border-box;
 }
 .ref_taskbox p {
     top: 0;
@@ -201,4 +205,156 @@ button {
     width: 20px;
     height: 20px;
     cursor: pointer;
+}
+
+/* Media Queries pour la responsivité */
+
+/* Tablettes */
+@media screen and (max-width: 768px) {
+    .landing-page {
+        padding: 80px 15px 20px;
+    }
+    
+    .landing-page h1 {
+        font-size: clamp(24px, 6vw, 32px);
+        margin-bottom: 30px;
+    }
+    
+    .add-list {
+        top: 15px;
+        right: 15px;
+        width: min(180px, calc(100vw - 30px));
+        height: 50px;
+        font-size: clamp(16px, 4vw, 22px);
+    }
+    
+    .ref_row {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        margin-top: 50px;
+    }
+    
+    .ref_taskbox {
+        min-width: 250px;
+        padding: 12px;
+    }
+    
+    .pop-up-task-name.shown,
+    .pop-up-name.shown {
+        width: min(350px, 90vw);
+        padding: 20px 15px;
+        gap: 20px;
+    }
+}
+
+/* Mobiles */
+@media screen and (max-width: 480px) {
+    .landing-page {
+        padding: 90px 10px 20px;
+    }
+    
+    .landing-page h1 {
+        font-size: clamp(20px, 7vw, 28px);
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .add-list {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        width: calc(100vw - 20px);
+        height: 45px;
+        font-size: clamp(14px, 5vw, 18px);
+    }
+    
+    .ref_row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 40px;
+    }
+    
+    .ref_taskbox {
+        min-width: 100%;
+        width: 100%;
+        padding: 10px;
+        min-height: 100px;
+    }
+    
+    .ref_taskbox button {
+        font-size: 12px;
+        padding: 8px;
+        margin-top: 10px;
+    }
+    
+    .task {
+        padding: 8px;
+        gap: 8px;
+        font-size: 14px;
+    }
+    
+    .task-name {
+        font-size: 14px;
+        word-break: break-word;
+        flex: 1;
+        text-align: left;
+    }
+    
+    .task-checkbox {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+    }
+    
+    .delete-task {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+    }
+    
+    .pop-up-task-name.shown,
+    .pop-up-name.shown {
+        width: min(300px, 95vw);
+        height: auto;
+        min-height: 150px;
+        padding: 15px 10px;
+        gap: 15px;
+    }
+    
+    .pop-up-task-name.shown input,
+    .pop-up-name.shown input {
+        height: 42px;
+        font-size: 14px;
+    }
+    
+    .pop-up-task-name.shown button,
+    .pop-up-name.shown button {
+        width: 120px;
+        height: 42px;
+        font-size: 14px;
+    }
+}
+
+/* Très petits écrans */
+@media screen and (max-width: 320px) {
+    .landing-page {
+        padding: 80px 8px 15px;
+    }
+    
+    .ref_taskbox {
+        padding: 8px;
+        min-height: 90px;
+    }
+    
+    .task {
+        padding: 6px;
+        gap: 6px;
+        font-size: 13px;
+    }
+    
+    .pop-up-task-name.shown,
+    .pop-up-name.shown {
+        width: calc(100vw - 20px);
+        margin: 0 10px;
+    }
 }
