@@ -31,6 +31,11 @@ function create_row(){
     rowContainer.appendChild(newRow);
 }
 
+function deleteTask(deleteButton){
+  const to_delete = deleteButton.parentElement;
+  to_delete.remove();  
+}
+
 function addList() {
 
   popup.classList.add("shown");
@@ -97,7 +102,7 @@ function addTask(taskBoxId){
       newTask.innerHTML = `
         <input type="checkbox" class="task-checkbox">
         <p class="task-name">${taskContent}</p>
-        <button class="delete-task" onclick="deleteTask(this)">×</button>
+        <box-icon name='x' class="delete-task" onclick="deleteTask(this)"></box-icon>
       `;
 
       const targetTaskBox = document.getElementById(`task-pos-${current_task_box_id}`);
