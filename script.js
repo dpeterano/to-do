@@ -36,6 +36,24 @@ function deleteTask(deleteButton){
   to_delete.remove();  
 }
 
+function deleteTaskBox(deleteButton){
+  const taskBox = deleteButton.closest('.ref_taskbox');
+  if (taskBox) {
+    taskBox.remove();
+    
+    // Diminuer le compteur de task boxes dans la rangée actuelle
+    task_box_count--;
+    
+    // Si la rangée devient vide, on pourrait la supprimer aussi (optionnel)
+    const currentRow = deleteButton.closest('.ref_row');
+    if (currentRow && currentRow.children.length === 0) {
+      currentRow.remove();
+      row_count--;
+      task_box_count = 0;
+    }
+  }
+}
+
 function addList() {
 
   popup.classList.add("shown");
@@ -65,7 +83,7 @@ function addList() {
       newTaskBox.classList.add("ref_taskbox")
       newTaskBox.innerHTML = `
             <div class="task-box-header">
-            <box-icon name='x' class="delete-task" onclick="this.parentElement.remove()"></box-icon>
+            <box-icon name='x' class="delete-task" onclick="deleteTaskBox(this)"></box-icon>
             <p class="task-box-name">${pop_input_content}</p>
             </div>
             <div class="task-pos" id="task-pos-${task_box_cnt}"></div>

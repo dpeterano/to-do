@@ -219,3 +219,17 @@ button {
     height: 20px;
     cursor: pointer;
 }
+
+/* footer section  */
+
+footer {
+    margin-top: 100px;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f2f4f8;
+    padding: 20px;
+    text-align: center;
+    border-top: solid 1px #e6e6e6;
+}
