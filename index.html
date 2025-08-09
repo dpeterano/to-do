@@ -10,50 +10,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Pop up overlay for blur effect -->
+    <div class="pop-up-overlay" id="pop-up-overlay"></div>
 
     <!-- Pop up asking for Task Box name -->
-
     <div class="pop-up-name" id="pop-up-name">
         <input type="text" id="pop-input" placeholder="Enter Task List Name">
         <button type="submit" id="pop-button">Add</button>
     </div>
+    
     <div class="pop-up-task-name" id="pop-up-task-name">
         <input type="text" id="pop-task-input" placeholder="Enter Task Name Here">
         <button type="submit" id="pop-task-button">Add</button>
     </div>
     
-    <section class="landing-page">
-        
-        <h1 class="main-title">
-            MY TO DO LIST
-        </h1>
+    <!-- Contenu principal qui sera flouté -->
+    <div class="main-content">
+        <section class="landing-page">
+            <h1 class="main-title">MY TO DO LIST</h1>
+            <button class="add-list" onclick="addList()">Add List</button>
+            <div class="t_refer" id="t_refer"></div>
+        </section>
 
-        <!-- Add List Button -->
+        <footer class="footer" id="footer">
+            <p class="footer-text">Made by Hauani PETERANO</p>
+            <div class="footer-icons">
+                <a href="https://github.com/hauanitech">GitHub</a>
+                <a href="https://www.linkedin.com/in/hauanitech">LinkedIn</a>
+            </div>
+        </footer>
+    </div>
 
-        <button class="add-list" onclick="addList()">Add List</button>
-
-        <!-- section containing the task lists -->
-
-        <div class="t_refer" id="t_refer">
-            
-        </div>
-
-    </section>
-
-    <!-- footer <section></section> -->
-
-    <footer class="footer" id="footer">
-        <p class="footer-text">Made by Hauani PETERANO</p>
-        <div class="footer-icons">
-            <a href="https://github.com/hauanitech">GitHub</a>
-            <a href="https://www.linkedin.com/in/hauanitech">LinkedIn</a>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
     <script src="script.js"></script>   
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-
-
 </body>
 </html>
