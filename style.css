@@ -206,24 +206,23 @@ button {
 /* Container des listes - 3 par rangée sur desktop */
 .t_refer {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 0 2rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .ref_row {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    width: 100%;
 }
 
 /* Assure 3 task boxes par rangée sur desktop */
 .ref_taskbox {
-    flex: 0 1 calc(33.333% - 1.33rem);
-    min-width: 280px;
     background: var(--bg-card);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow);
@@ -387,7 +386,7 @@ button {
 }
 
 .AddTask:hover::before {
-    width: 300px;
+    width: 100%;
     height: 300px;
 }
 
@@ -461,20 +460,30 @@ box-icon:active {
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
-    .ref_taskbox {
-        flex: 0 1 calc(50% - 1rem);
+/* Desktop : forcer exactement 3 colonnes */
+@media (min-width: 1200px) {
+    .ref_row {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
+/* Tablette : exactement 2 colonnes */
+@media (max-width: 1199px) and (min-width: 769px) {
+    .ref_row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile : 1 colonne */
 @media (max-width: 768px) {
-    .ref_taskbox {
-        flex: 1 1 100%;
-        min-width: unset;
+    .ref_row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
     
-    .ref_row {
-        flex-direction: column;
+    .t_refer {
+        padding: 0 1rem;
+        gap: 2rem;
     }
     
     .main-title {
@@ -486,6 +495,7 @@ box-icon:active {
     }
 }
 
+/* Petits mobiles : optimisations supplémentaires */
 @media (max-width: 480px) {
     .task {
         padding: 8px;
@@ -495,6 +505,10 @@ box-icon:active {
     .task-checkbox {
         width: 18px;
         height: 18px;
+    }
+    
+    .ref_taskbox {
+        margin-bottom: 1rem;
     }
 }
 
