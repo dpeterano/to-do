@@ -24,6 +24,14 @@ function showOverlay() {
 function hideOverlay() {
     overlay.classList.remove("shown");
     document.body.classList.remove("blur-background");
+    
+    // Masquer les popups et nettoyer les inputs
+    popup.classList.remove("shown");
+    document.getElementById("pop-up-task-name").classList.remove("shown");
+    
+    // Nettoyer les valeurs des inputs
+    pop_input.value = "";
+    document.getElementById("pop-task-input").value = "";
 }
 
 function createCompletedTaskList() {
@@ -178,7 +186,12 @@ function addList() {
     current_task_box_id = null;
     showOverlay();
     popup.classList.add("shown");
-    pop_input.focus();
+    
+    // Focus avec un petit délai pour s'assurer que l'input est visible
+    setTimeout(() => {
+        pop_input.focus();
+        pop_input.select(); // Sélectionne tout le texte s'il y en a
+    }, 100);
 }
 
 pop_button.addEventListener("click", function() {
@@ -213,6 +226,14 @@ pop_button.addEventListener("click", function() {
         popup.classList.remove("shown");
         hideOverlay();
         pop_input.value = "";
+    }
+});
+
+// Validation par Enter pour la création de task list
+pop_input.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        pop_button.click();
     }
 });
 
@@ -264,7 +285,12 @@ function addTask(task_box_id) {
     
     showOverlay();
     taskPopup.classList.add("shown");
-    taskInput.focus();
+    
+    // Focus avec un petit délai pour s'assurer que l'input est visible
+    setTimeout(() => {
+        taskInput.focus();
+        taskInput.select(); // Sélectionne tout le texte s'il y en a
+    }, 100);
 }
 
 const taskPopup = document.getElementById("pop-up-task-name");
@@ -291,6 +317,14 @@ taskButton.addEventListener("click", function() {
         taskPopup.classList.remove("shown");
         hideOverlay();
         taskInput.value = "";
+    }
+});
+
+// Validation par Enter pour la création de task
+taskInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        taskButton.click();
     }
 });
 

@@ -216,7 +216,7 @@ button {
 
 .ref_row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     width: 100%;
 }
@@ -460,22 +460,23 @@ box-icon:active {
 }
 
 /* Responsive */
-/* Desktop : forcer exactement 3 colonnes */
+/* Large desktop : 3 colonnes */
 @media (min-width: 1200px) {
     .ref_row {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* Tablette : exactement 2 colonnes */
-@media (max-width: 1199px) and (min-width: 769px) {
+/* Desktop moyen : 3 colonnes */
+@media (max-width: 1199px) and (min-width: 926px) {
     .ref_row {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* Mobile : 1 colonne */
-@media (max-width: 768px) {
+
+/* Mobile et petites tablettes : 1 colonne */
+@media (max-width: 925px) {
     .ref_row {
         grid-template-columns: 1fr;
         gap: 1rem;
